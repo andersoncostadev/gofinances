@@ -16,4 +16,9 @@ export default {
     text: '#969CB2',
     background: '#F0F2F5',
   },
+  fonts: {
+    regular: 'Poppins-Regular',
+    medium: 'Poppins-Medium',
+    bold: 'Poppins-Bold',
+  },
 };
