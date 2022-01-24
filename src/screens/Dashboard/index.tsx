@@ -1,5 +1,8 @@
 import React from 'react';
+
 import HighlightCard from '../../components/HighlightCard';
+import TransactionCard from '../../components/TransactionCard';
+import {IDataListProps} from '../../types/types';
 
 import {
   Container,
@@ -14,9 +17,47 @@ import {
   HighlightCards,
   Transactions,
   Title,
+  TransactionList,
 } from './styles';
 
 const Dashboard: React.FC = () => {
+  const data: IDataListProps[] = [
+    {
+      id: '1',
+      type: 'positive',
+      title: 'Desenvolvimento de Site',
+      amount: 'R$ 12.000,00',
+      category: {
+        name: 'Vendas',
+        icon: 'currency-usd',
+      },
+      date: '13/04/2020',
+    },
+    {
+      id: '2',
+      type: 'negative',
+      title: 'Hamburgueria Pizzy',
+      amount: 'R$ 59,00',
+      category: {
+        name: 'Alimentação',
+        icon: 'food',
+      },
+      date: '10/04/2020',
+    },
+
+    {
+      id: '3',
+      type: 'negative',
+      title: 'Aluguel',
+      amount: 'R$ 1.200,00',
+      category: {
+        name: 'Casa',
+        icon: 'shopping',
+      },
+      date: '10/04/2020',
+    },
+  ];
+
   return (
     <Container>
       <Header>
@@ -59,6 +100,12 @@ const Dashboard: React.FC = () => {
 
       <Transactions>
         <Title>Listagem</Title>
+
+        <TransactionList
+          data={data}
+          keyExtractor={item => item.id}
+          renderItem={({item}) => <TransactionCard data={item} />}
+        />
       </Transactions>
     </Container>
   );
