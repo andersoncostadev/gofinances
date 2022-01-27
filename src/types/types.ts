@@ -1,3 +1,5 @@
+import {TouchableOpacityProps} from 'react-native';
+
 export interface IHiglightCard {
   title: string;
   amount: string;
@@ -33,4 +35,23 @@ export interface ITransactionTypes {
 
 export interface IDataListProps extends ITransactionCardsProps {
   id: string;
+}
+
+export interface IButton extends TouchableOpacityProps {
+  title: string;
+}
+
+export interface ITransactionTypeButton extends TouchableOpacityProps {
+  title: string;
+  type: 'up' | 'down';
+  isActive: boolean;
+}
+
+export interface IIconsProps {
+  type: 'up' | 'down';
+}
+
+export interface IContainerProps {
+  isActive: boolean;
+  type: 'up' | 'down';
 }
