@@ -55,3 +55,23 @@ export interface IContainerProps {
   isActive: boolean;
   type: 'up' | 'down';
 }
+
+export interface ICategorySelectButton {
+  title: string;
+  onPress: () => void;
+}
+
+interface ICategoryProps {
+  key: string;
+  name: string;
+}
+
+export interface ICategorySelectProps {
+  category: ICategoryProps;
+  setCategory: (category: ICategoryProps) => void;
+  closeSelectCategory: () => void;
+}
+
+export interface IPropsCategory {
+  isActive: boolean;
+}
