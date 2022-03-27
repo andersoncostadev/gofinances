@@ -1,4 +1,4 @@
-import {TouchableOpacityProps} from 'react-native';
+import {RectButtonProps} from 'react-native-gesture-handler';
 
 export interface IHiglightCard {
   title: string;
@@ -37,11 +37,12 @@ export interface IDataListProps extends ITransactionCardsProps {
   id: string;
 }
 
-export interface IButton extends TouchableOpacityProps {
+export interface IButton extends RectButtonProps {
   title: string;
+  onPress: () => void;
 }
 
-export interface ITransactionTypeButton extends TouchableOpacityProps {
+export interface ITransactionTypeButton extends RectButtonProps {
   title: string;
   type: 'up' | 'down';
   isActive: boolean;
