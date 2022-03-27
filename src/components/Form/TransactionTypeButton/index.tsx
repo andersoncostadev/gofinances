@@ -1,7 +1,7 @@
 import React from 'react';
 import {ITransactionTypeButton} from '../../../types/types';
 
-import {Container, Icon, Title} from './styles';
+import {Container, Icon, Title, Button} from './styles';
 
 const icons = {
   up: 'arrow-up-circle',
@@ -15,9 +15,11 @@ const TransactionTypeButton: React.FC<ITransactionTypeButton> = ({
   ...rest
 }) => {
   return (
-    <Container {...rest} type={type} isActive={isActive}>
-      <Icon type={type} name={icons[type]} />
-      <Title>{title}</Title>
+    <Container type={type} isActive={isActive}>
+      <Button {...rest}>
+        <Icon type={type} name={icons[type]} />
+        <Title>{title}</Title>
+      </Button>
     </Container>
   );
 };
