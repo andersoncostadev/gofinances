@@ -3,6 +3,7 @@ import {RFPercentage, RFValue} from 'react-native-responsive-fontsize';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {FlatList, ScrollView} from 'react-native';
 import {getStatusBarHeight, getBottomSpace} from 'react-native-iphone-x-helper';
+import {BorderlessButton} from 'react-native-gesture-handler';
 
 import {IDataListProps} from './../../types/types';
 
@@ -63,6 +64,7 @@ export const UserName = styled.Text`
   font-size: ${RFValue(18)}px;
   font-family: ${({theme}) => theme.fonts.bold};
 `;
+export const LogoutButton = styled(BorderlessButton)``;
 
 export const Icon = styled(MaterialCommunityIcons).attrs({
   name: 'power',
