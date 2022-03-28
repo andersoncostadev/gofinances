@@ -3,9 +3,9 @@ import {IButton} from '../../../types/types';
 
 import {Container, Title} from './styles';
 
-const Button: React.FC<IButton> = ({title, ...rest}) => {
+const Button: React.FC<IButton> = ({title, onPress, ...rest}) => {
   return (
-    <Container {...rest}>
+    <Container onPress={onPress} {...rest}>
       <Title>{title}</Title>
     </Container>
   );

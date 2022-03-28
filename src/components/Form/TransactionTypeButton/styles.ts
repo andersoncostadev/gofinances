@@ -1,22 +1,16 @@
 import {IContainerProps, IIconsProps} from './../../../types/types';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {TouchableOpacity} from 'react-native';
+import {RectButton} from 'react-native-gesture-handler';
 import styled, {css} from 'styled-components/native';
 import {RFValue} from 'react-native-responsive-fontsize';
 
-export const Container = styled(TouchableOpacity)<IContainerProps>`
+export const Container = styled.View<IContainerProps>`
   width: 48%;
-
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
 
   border-width: ${({isActive}) => (isActive ? 0 : 1.5)}px;
   border-style: solid;
   border-color: ${({theme}) => theme.colors.text};
   border-radius: 5px;
-
-  padding: 16px;
 
   ${({isActive, type}) =>
     isActive &&
@@ -31,6 +25,14 @@ export const Container = styled(TouchableOpacity)<IContainerProps>`
     css`
       background-color: ${({theme}) => theme.colors.attention_light};
     `};
+`;
+
+export const Button = styled(RectButton)`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px;
 `;
 
 export const Icon = styled(MaterialCommunityIcons)<IIconsProps>`
